@@ -1,0 +1,92 @@
+wing1 = 59
+wing2 = 55
+wing3 = 53.5
+wing4 = 55
+wing5 = 52.5
+wing6 = 57.5
+wing7 =53
+wing8 = 55
+sqrt(wing1)
+wingcrd = c(wing1,wing2,wing3,wing4,wing5,wing6,wing7,wing8)
+#hàm c là hàm  t???o 1 vector
+wingcrd[1]
+# truy c???p vào ph???n t??? d???u tiên là s??? 1 
+wingcrd[-1]
+# -1 là g???i ra h???t các giá tr??? tr??? ph???n t??? d???u tiên 
+wingcrd[2:4]
+#li???t kê t??? 2 cho t???i 4
+# th???c hi???n các phép toán trên vector
+#sum,mean,max.min,median,v???,sd
+bien = sum(wingcrd)
+mean(wingcrd) #giá tr??? trung bình
+median(wingcrd)  # s??? trung v???
+var(wingcrd)
+sd(wingcrd)
+tarsus = c(22.3,19.7,20.8,20.3,20.8,21.5,20.6,21.5)
+head = c(31.2,30.4,30.6,30.3,30.3,30.8,32.5,NA)
+wt = c(9.5,13.8,14.8,15.2,15.5,15.6,15.6,15.7)
+# mu???n tính t???ng c???a head mà lo???i ra các bi???n NA 
+sum(head,na.rm = TRUE)
+#NA : not available 
+sum(head,na.rm = FALSE)
+bigdata = c(wingcrd,tarsus,head,wt)
+id = rep(c(1,2,3,4), each = 8)
+id
+id = rep(1:4, each = 8)
+id
+a = seq(from = 1, to = 4 ,by = 2)
+a
+data = matrix(bigdata,8,4)
+data
+z = cbind(wingcrd,tarsus,head,wt)
+z
+#l???y s??? li???u c???a c???t 1 :
+z[,1]
+#l???y giá tr??? kho???ng M :n c???a c???t x 
+z[2:5,2]
+z[2,] #l???y s??? li???u c???a dòng 
+# l???y s??? li???u dòng s??? 2 , c???t 1 và c???t 2 
+z[2,1:2]
+#l???y s??? li???u dòng 2 c???t 1 và c???t 2
+z[2,c(1,2)]
+# l???y dòng 1 , 5, 8 ???ng v???i c???t 2 4
+z[c(1,5,8),c(2,4)] 
+dim(z)
+nrow = dim(z)[1]
+nrow
+ncol = dim(z)[2]
+ncol
+z2 = rbind(wingcrd,tarsus,head,wt)
+z2 # k???t n???i theo hàng 
+# s??? dùng hàm vector d??? k???t n???i s??? li???u 
+w = vector(length = 8)
+w
+dmat = matrix(nrow = 8,ncol = 4)
+dmat
+dmat[,1] = c(59,55,53.5,55,52.5,57.5,53,55)
+dmat
+dmat[,2] = tarsus
+dmat[,3] = head
+dmat[,4] = wt
+dmat
+colnames(dmat) = c("wingcrd","tarsus","head","wt")
+dmat
+# cách 2 d??? khai báo d??? li???u b???ng ma tr???n 
+dmat2 = as.matrix(cbind(wingcrd,tarsus,head,wt))
+dmat2
+# s??? d???ng ddataframe d??? khai báo d??? li???u :
+dfrm = data.frame(wc =wingcrd,TS = tarsus,HD = head,W =wt)
+dfrm
+dfrm2 = data.frame(dfrm,wsqrt = sqrt(wt))
+dfrm2
+#k???t n???i d??? li???u b???ng list function
+x1 = c(1,2,3)
+x2 = c("a","b","c","d")
+x3 = 3
+x4 = matrix(nrow = 2, ncol =2)
+x4[,1] = c(1,2)
+x4[,2] = c(3,4)
+y = list(x1=x1, x2= x2,x3=x3, x4=x4)
+y
+alldata = list(bigdata = bigdata,ID =id,Z=z)
+alldata
