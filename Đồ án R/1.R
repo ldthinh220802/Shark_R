@@ -1,5 +1,6 @@
 # Bieu do 1: Tong So ca mac covid 19 ghi nhan tinh den ngay 22/1/2020
 
+
 df = read.csv('D:\\all_files\\COVID-19-master\\csse_covid_19_data\\csse_covid_19_time_series\\time_series_covid19_confirmed_global.csv', header = TRUE)
 
 names(df)
